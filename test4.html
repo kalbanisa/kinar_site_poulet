@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dessin avec Canvas</title>
+</head>
+<body>
+    <h1>Mon Premier Dessin</h1>
+    <canvas id="myCanvas" width="400" height="400" style="border:1px solid #000000;"></canvas>
+
+    <script>
+        // Récupérer le canvas et le contexte
+        let canvas = document.getElementById('myCanvas');
+        let context = canvas.getContext('2d');
+
+        // Dessiner un rectangle
+        context.fillStyle = '#FF0000';
+        context.fillRect(50, 50, 150, 100);
+
+        // Dessiner un cercle
+        context.beginPath();
+        context.arc(200, 200, 50, 0, Math.PI * 2);
+        context.fillStyle = '#00FF00';
+        context.fill();
+        context.closePath();
+        
+        // Dessiner une ligne
+        context.beginPath();
+        context.moveTo(0, 0);
+        context.lineTo(400, 400);
+        context.strokeStyle = '#0000FF';
+        context.stroke();
+        context.closePath();
+    </script>
+</body>
+</html>
